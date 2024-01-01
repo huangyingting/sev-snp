@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sev-snp-snp
+  name: sev-snp
+spec:
+  selector:
+    matchLabels:
+      app: sev-snp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sev-snp
+    spec:
+      runtimeClassName: kata-cc-isolation
+      containers:
+      - image: ghcr.io/huangyingting/sev-snp:latest
+        imagePullPolicy: Always
+        name: sev-snp
+        env:
+        - name: UVM_SECURITY_CONTEXT_DIR
+          value: /opt/confidential-containers/share/kata-containers
+        volumeMounts:
+        - mountPath: /opt/confidential-containers/share/kata-containers/reference-info-base64
+          name: endorsement-location
+        - name: id-rsa
+          readOnly: true
+          mountPath: "/root/.ssh"
+      imagePullSecrets:
+        - name: ccacrsea
+      volumes:
+        - name: endorsement-location
+          hostPath:
+            path: /opt/confidential-containers/share/kata-containers/reference-info-base64
+        - name: id-rsa
+          secret:
+            secretName: id-rsa
+            defaultMode: 0600

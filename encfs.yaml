@@ -1,0 +1,84 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: encfs
+  name: encfs
+  namespace: cc
+spec:
+  selector:
+    matchLabels:
+      app: encfs
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: encfs
+        azure.workload.identity/use: "true"
+      annotations:
+        io.katacontainers.config.agent.policy: cGFja2FnZSBhZ2VudF9wb2xpY3kKCmltcG9ydCBmdXR1cmUua2V5d29yZHMuaW4KaW1wb3J0IGZ1dHVyZS5rZXl3b3Jkcy5ldmVyeQoKaW1wb3J0IGlucHV0CgpkZWZhdWx0IENvcHlGaWxlUmVxdWVzdCA6PSB0cnVlCmRlZmF1bHQgQ3JlYXRlQ29udGFpbmVyUmVxdWVzdCA6PSB0cnVlCmRlZmF1bHQgQ3JlYXRlU2FuZGJveFJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IERlc3Ryb3lTYW5kYm94UmVxdWVzdCA6PSB0cnVlCmRlZmF1bHQgRXhlY1Byb2Nlc3NSZXF1ZXN0IDo9IHRydWUKZGVmYXVsdCBHZXRPT01FdmVudFJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IEd1ZXN0RGV0YWlsc1JlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IE9ubGluZUNQVU1lbVJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFB1bGxJbWFnZVJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFJlYWRTdHJlYW1SZXF1ZXN0IDo9IHRydWUKZGVmYXVsdCBSZW1vdmVDb250YWluZXJSZXF1ZXN0IDo9IHRydWUKZGVmYXVsdCBSZW1vdmVTdGFsZVZpcnRpb2ZzU2hhcmVNb3VudHNSZXF1ZXN0IDo9IHRydWUKZGVmYXVsdCBTaWduYWxQcm9jZXNzUmVxdWVzdCA6PSB0cnVlCmRlZmF1bHQgU3RhcnRDb250YWluZXJSZXF1ZXN0IDo9IHRydWUKZGVmYXVsdCBTdGF0c0NvbnRhaW5lclJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFR0eVdpblJlc2l6ZVJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFVwZGF0ZUVwaGVtZXJhbE1vdW50c1JlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFVwZGF0ZUludGVyZmFjZVJlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFVwZGF0ZVJvdXRlc1JlcXVlc3QgOj0gdHJ1ZQpkZWZhdWx0IFdhaXRQcm9jZXNzUmVxdWVzdCA6PSB0cnVlCmRlZmF1bHQgV3JpdGVTdHJlYW1SZXF1ZXN0IDo9IHRydWUKZGVmYXVsdCBBbGxvd1JlcXVlc3RzRmFpbGluZ1BvbGljeSA6PSBmYWxzZQ==
+    spec:
+      runtimeClassName: kata-cc-isolation
+      serviceAccountName: encfs
+      containers:
+        - image: "ccacrsea.azurecr.io/encfs:main"
+          imagePullPolicy: Always
+          name: encfs
+          command:
+            - /encfs.sh
+          env:
+            - name: EncfsSideCarArgs
+              value: ewogICAiYXp1cmVfZmlsZXN5c3RlbXMiOiBbCiAgICAgIHsKICAgICAgICAgIm1vdW50X3BvaW50IjogIi9tbnQvcmVtb3RlL3NoYXJlIiwKICAgICAgICAgImF6dXJlX3VybCI6ICJodHRwczovL2Njc2VhLmJsb2IuY29yZS53aW5kb3dzLm5ldC9lbmNmcy9lbmNmc2thdGFjYy5pbWciLAogICAgICAgICAiYXp1cmVfdXJsX3ByaXZhdGUiOiB0cnVlLAogICAgICAgICAicmVhZF93cml0ZSI6IHRydWUsCiAgICAgICAgICJrZXkiOiB7CiAgICAgICAgICAgICJraWQiOiAiZW5jZnMiLAogICAgICAgICAgICAia3R5IjogIlJTQS1IU00iLAogICAgICAgICAgICAiYXV0aG9yaXR5IjogewogICAgICAgICAgICAgICAiZW5kcG9pbnQiOiAiY2NzZWEuc2FzaWEuYXR0ZXN0LmF6dXJlLm5ldCIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgImFrdiI6IHsKICAgICAgICAgICAgICAgImVuZHBvaW50IjogImNja3ZwLnZhdWx0LmF6dXJlLm5ldCIKICAgICAgICAgICAgfQogICAgICAgICB9LAogICAgICAgICAia2V5X2Rlcml2YXRpb24iOiB7CiAgICAgICAgICAgICJzYWx0IjogIjYwNDM4ZGVjMTkzZDE5MGEzOWVkOTMyYTQzNzg3NjQ0IiwKICAgICAgICAgICAgImxhYmVsIjogImVuY2ZzIgogICAgICAgICB9CiAgICAgIH0KICAgXQp9
+            - name: UVM_SECURITY_CONTEXT_DIR
+              value: /opt/confidential-containers/share/kata-containers
+            - name: LogLevel
+              value: trace
+            - name: LogFile
+              value: /var/log/encfs.log
+          volumeMounts:
+            - mountPath: /opt/confidential-containers/share/kata-containers/reference-info-base64
+              name: endorsement-location
+            - mountPath: /dev
+              name: dev
+            - mountPath: /mnt/remote
+              name: remotemounts
+              mountPropagation: Bidirectional
+          securityContext:
+            privileged: true
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/sh
+                  - "-c"
+                  - umount /mnt/remote/share
+        - image: "alpine:3.18"
+          imagePullPolicy: Always
+          name: alpine
+          command:
+            - /bin/sh
+            - "-c"
+          args:
+            - sleep infinity
+          env:
+            - name: UVM_SECURITY_CONTEXT_DIR
+              value: /opt/confidential-containers/share/kata-containers
+          volumeMounts:
+            - mountPath: /opt/confidential-containers/share/kata-containers/reference-info-base64
+              name: endorsement-location
+            - mountPath: /mnt/remote
+              name: remotemounts
+              mountPropagation: HostToContainer
+      terminationGracePeriodSeconds: 60
+      imagePullSecrets:
+        - name: ccacrsea
+      volumes:
+        - name: endorsement-location
+          hostPath:
+            path: /opt/confidential-containers/share/kata-containers/reference-info-base64
+        - name: dev
+          hostPath:
+            path: /dev
+        - name: remotemounts
+          emptyDir: {}

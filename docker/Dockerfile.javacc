@@ -1,0 +1,24 @@
+# Use the official Gradle image as the base image
+FROM gradle:jdk17 as builder
+
+# Set the working directory
+WORKDIR /build
+
+# Copy the project into the Docker image
+COPY javacc .
+
+# Build the project
+RUN gradle shadowJar
+
+# Use the official OpenJDK image as the runtime base image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the built application from the builder image
+COPY --from=builder /build/build/libs/*.jar ./app.jar
+COPY data/house-price.parquet ./house-price.parquet
+
+# Run the application
+CMD ["java", "-jar", "./app.jar", "house-price.parquet"]

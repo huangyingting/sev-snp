@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: skr
+  name: skr
+spec:
+  selector:
+    matchLabels:
+      app: skr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: skr
+        azure.workload.identity/use: "true"
+    spec:
+      runtimeClassName: kata-cc-isolation
+      serviceAccountName: skr
+      containers:
+      - image: ccacrsea.azurecr.io/skr:main
+        imagePullPolicy: Always
+        name: skr
+        command: 
+        - /skr.sh
+        env:
+        - name: SkrSideCarArgs
+          value: ewogICAgImNlcnRjYWNoZSI6IHsKCQkiZW5kcG9pbnRfdHlwZSI6ICJMb2NhbFRISU0iLAoJCSJlbmRwb2ludCI6ICIxNjkuMjU0LjE2OS4yNTQvbWV0YWRhdGEvVEhJTS9hbWQvY2VydGlmaWNhdGlvbiIKCX0gIAp9
+        - name: UVM_SECURITY_CONTEXT_DIR
+          value: /opt/confidential-containers/share/kata-containers
+        - name: LogLevel
+          value: trace
+        - name: LogFile
+          value: /var/log/skr.log
+        volumeMounts:
+        - mountPath: /opt/confidential-containers/share/kata-containers/reference-info-base64
+          name: endorsement-location
+      - image: ccacrsea.azurecr.io/unwrap:main
+        imagePullPolicy: Always
+        name: unwrap
+        command:
+          - /bin/sh
+          - "-c"
+        args:
+          - until netstat -anpe | grep 50000; do sleep 3; done; /bin/unwrap.sh /wrapped /plaintext && cat /plaintext && sleep infinity
+      imagePullSecrets:
+        - name: ccacrsea
+      volumes:
+        - name: endorsement-location
+          hostPath:
+            path: /opt/confidential-containers/share/kata-containers/reference-info-base64

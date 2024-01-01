@@ -1,0 +1,34 @@
+# Build sev-guest and snpguest tools with rust image
+FROM rust:alpine3.18 AS rust-builder
+WORKDIR /build
+RUN apk update && \
+    apk upgrade --no-cache && \
+    apk add --no-cache linux-headers git libc-dev util-linux-dev build-base openssl-dev autoconf automake
+RUN git clone https://github.com/AMDESE/sev-guest.git && \
+    cd sev-guest && \
+    make sev-guest-get-report && \
+    make sev-guest-parse-report && \
+    cd .. && \
+    git clone https://github.com/virtee/snpguest && \
+    cd snpguest && \
+    RUST_BACKTRACE=full cargo build -r
+
+# Build go-sev-guest tools with go image
+FROM golang:alpine3.18 AS go-builder
+WORKDIR /build
+RUN apk update && \
+    apk upgrade --no-cache && \
+    apk add --no-cache git && \
+    git clone https://github.com/google/go-sev-guest && \
+    cd go-sev-guest && \
+    go build -o attest ./tools/attest && \
+    go build -o check ./tools/check
+    
+
+# Final image
+FROM alpine:3.18
+WORKDIR app
+RUN apk update && apk upgrade --no-cache && apk add --no-cache jq openssh curl libuuid openssl
+COPY --from=rust-builder /build/snpguest/target/release/snpguest /build/sev-guest/sev-guest-get-report /build/sev-guest/sev-guest-parse-report /app
+COPY --from=go-builder /build/go-sev-guest/attest /build/go-sev-guest/check /app
+CMD [ "/bin/sh", "-c", "sleep infinity" ]

@@ -1,0 +1,101 @@
+HEADER:ALGORITHM & TOKEN TYPE
+
+{
+  "alg": "RS256",
+  "jku": "https://ccsea.sasia.attest.azure.net/certs",
+  "kid": "lyffqOQyo9Qj/vNnd+FB2K3Nca1XWlDMNyBEzaK9dY0=",
+  "typ": "JWT"
+}
+PAYLOAD:DATA
+
+BUwsiFYAzHu_gco",
+  "x-ms-runtime": {
+    "keys": [
+      {
+        "e": "AQAB",
+        "key_ops": [
+          "encrypt"
+        ],
+        "kid": "BYdyBM1dV41WcSLO4suDm6MG1Q5fSplglNyrtDIUzds",
+        "kty": "RSA",
+        "n": "tcst3-fTewTUQeUwasfc9wpC8ZiNmRNk2tor-_XNjWNvqq0L3rJZeeqLLq_ec7TXFvwzQRBOL1eYcvQvZsk1plWlt-MzHcQy0P2UgGSKg2DOftGIHGK-FVcNc-aGKEOsopOFjmTbohy4_bpjVVgkgBgkrlh42dCPk4oUCarnmgGVAF5WumQl2PY2057F16wFIaprXAylPoser8q2oO1oo0rrR9K4d_DXt036aWyKi11doVIYj5jMcA9nvKRDhZV8CwMHmGD5gaFxFNhtFB6ti3kW8qKlOPwaw42mISk4Tf_GEzoJZ_H1mvaQO0IrC-n4HbICE0knW15XwyGWoZcg-Q"
+      }
+    ]
+  },
+  "x-ms-sevsnpvm-authorkeydigest": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "x-ms-sevsnpvm-bootloader-svn": 3,
+  "x-ms-sevsnpvm-familyId": "01000000000000000000000000000000",
+  "x-ms-sevsnpvm-guestsvn": 2,
+  "x-ms-sevsnpvm-hostdata": "59f6818ede2b7124ea2c912a88fa99d9a052e472bcfd3bcc4be69d3866e9d3c3",
+  "x-ms-sevsnpvm-idkeydigest": "22087e0b99b911c9cffccfd9550a054531c105d46ed6d31f948eae56bd2defa4887e2fc4207768ec610aa232ac7490c4",
+  "x-ms-sevsnpvm-imageId": "02000000000000000000000000000000",
+  "x-ms-sevsnpvm-is-debuggable": false,
+  "x-ms-sevsnpvm-launchmeasurement": "10ea9102cffca36b831d3271e984d980e29949874aa6d8b4d6b22328c771dae4183deb131b4455f7c8ffb5f0dc041155",
+  "x-ms-sevsnpvm-microcode-svn": 115,
+  "x-ms-sevsnpvm-migration-allowed": false,
+  "x-ms-sevsnpvm-reportdata": "4a85f5cccfacd742fc65e05e13165b0bf94b89d00add116c58bb55e4b05206570000000000000000000000000000000000000000000000000000000000000000",
+  "x-ms-sevsnpvm-reportid": "16a01a83263be0c5519ce81de4dcaabaf90760ec8678371e73e6da24f2453d93",
+  "x-ms-sevsnpvm-smt-allowed": true,
+  "x-ms-sevsnpvm-snpfw-svn": 8,
+  "x-ms-sevsnpvm-tee-svn": 0,
+  "x-ms-sevsnpvm-uvm-endorsement": {
+    "x-ms-sevsnpvm-guestsvn": "0",
+    "x-ms-sevsnpvm-launchmeasurement": "10ea9102cffca36b831d3271e984d980e29949874aa6d8b4d6b22328c771dae4183deb131b4455f7c8ffb5f0dc041155"
+  },
+  "x-ms-sevsnpvm-uvm-endorsement-headers": {
+    "feed": "ConfAKS-AMD-UVM",
+    "iss": "did:x509:0:sha256:I__iuL25oXEVFdTP_aBLx_eT1RPHbCQ_ECBQfYZpt9s::eku:1.3.6.1.4.1.311.76.59.1.5"
+  },
+  "x-ms-sevsnpvm-vmpl": 0,
+  "x-ms-ver": "1.0"
+}
+{
+  "exp": 1704055425,
+  "iat": 1704026625,
+  "iss": "https://ccsea.sasia.attest.azure.net",
+  "jti": "24cdef69e0e4b28f197828caa28fe13e54ab2a7ef25fd578b3aae12b7d9477b8",
+  "nbf": 1704026625,
+  "nonce": "17274288497557235473",
+  "x-ms-attestation-type": "sevsnpvm",
+  "x-ms-compliance-status": "azure-signed-katacc-uvm",
+  "x-ms-policy-hash": "9NY0VnTQ-IiBriBplVUpFbczcDaEBUwsiFYAzHu_gco",
+  "x-ms-runtime": {
+    "keys": [
+      {
+        "e": "AQAB",
+        "key_ops": [
+          "encrypt"
+        ],
+        "kid": "BYdyBM1dV41WcSLO4suDm6MG1Q5fSplglNyrtDIUzds",
+        "kty": "RSA",
+        "n": "tcst3-fTewTUQeUwasfc9wpC8ZiNmRNk2tor-_XNjWNvqq0L3rJZeeqLLq_ec7TXFvwzQRBOL1eYcvQvZsk1plWlt-MzHcQy0P2UgGSKg2DOftGIHGK-FVcNc-aGKEOsopOFjmTbohy4_bpjVVgkgBgkrlh42dCPk4oUCarnmgGVAF5WumQl2PY2057F16wFIaprXAylPoser8q2oO1oo0rrR9K4d_DXt036aWyKi11doVIYj5jMcA9nvKRDhZV8CwMHmGD5gaFxFNhtFB6ti3kW8qKlOPwaw42mISk4Tf_GEzoJZ_H1mvaQO0IrC-n4HbICE0knW15XwyGWoZcg-Q"
+      }
+    ]
+  },
+  "x-ms-sevsnpvm-authorkeydigest": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "x-ms-sevsnpvm-bootloader-svn": 3,
+  "x-ms-sevsnpvm-familyId": "01000000000000000000000000000000",
+  "x-ms-sevsnpvm-guestsvn": 2,
+  "x-ms-sevsnpvm-hostdata": "59f6818ede2b7124ea2c912a88fa99d9a052e472bcfd3bcc4be69d3866e9d3c3",
+  "x-ms-sevsnpvm-idkeydigest": "22087e0b99b911c9cffccfd9550a054531c105d46ed6d31f948eae56bd2defa4887e2fc4207768ec610aa232ac7490c4",
+  "x-ms-sevsnpvm-imageId": "02000000000000000000000000000000",
+  "x-ms-sevsnpvm-is-debuggable": false,
+  "x-ms-sevsnpvm-launchmeasurement": "10ea9102cffca36b831d3271e984d980e29949874aa6d8b4d6b22328c771dae4183deb131b4455f7c8ffb5f0dc041155",
+  "x-ms-sevsnpvm-microcode-svn": 115,
+  "x-ms-sevsnpvm-migration-allowed": false,
+  "x-ms-sevsnpvm-reportdata": "4a85f5cccfacd742fc65e05e13165b0bf94b89d00add116c58bb55e4b05206570000000000000000000000000000000000000000000000000000000000000000",
+  "x-ms-sevsnpvm-reportid": "16a01a83263be0c5519ce81de4dcaabaf90760ec8678371e73e6da24f2453d93",
+  "x-ms-sevsnpvm-smt-allowed": true,
+  "x-ms-sevsnpvm-snpfw-svn": 8,
+  "x-ms-sevsnpvm-tee-svn": 0,
+  "x-ms-sevsnpvm-uvm-endorsement": {
+    "x-ms-sevsnpvm-guestsvn": "0",
+    "x-ms-sevsnpvm-launchmeasurement": "10ea9102cffca36b831d3271e984d980e29949874aa6d8b4d6b22328c771dae4183deb131b4455f7c8ffb5f0dc041155"
+  },
+  "x-ms-sevsnpvm-uvm-endorsement-headers": {
+    "feed": "ConfAKS-AMD-UVM",
+    "iss": "did:x509:0:sha256:I__iuL25oXEVFdTP_aBLx_eT1RPHbCQ_ECBQfYZpt9s::eku:1.3.6.1.4.1.311.76.59.1.5"
+  },
+  "x-ms-sevsnpvm-vmpl": 0,
+  "x-ms-ver": "1.0"
+}

@@ -1,0 +1,559 @@
+[
+    {
+      "allow_elevated": true,
+      "allow_stdio_access": true,
+      "capabilities": {
+        "ambient": [],
+        "bounding": [
+          "CAP_AUDIT_CONTROL",
+          "CAP_AUDIT_READ",
+          "CAP_AUDIT_WRITE",
+          "CAP_BLOCK_SUSPEND",
+          "CAP_BPF",
+          "CAP_CHECKPOINT_RESTORE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_DAC_READ_SEARCH",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_IPC_LOCK",
+          "CAP_IPC_OWNER",
+          "CAP_KILL",
+          "CAP_LEASE",
+          "CAP_LINUX_IMMUTABLE",
+          "CAP_MAC_ADMIN",
+          "CAP_MAC_OVERRIDE",
+          "CAP_MKNOD",
+          "CAP_NET_ADMIN",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_BROADCAST",
+          "CAP_NET_RAW",
+          "CAP_PERFMON",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYSLOG",
+          "CAP_SYS_ADMIN",
+          "CAP_SYS_BOOT",
+          "CAP_SYS_CHROOT",
+          "CAP_SYS_MODULE",
+          "CAP_SYS_NICE",
+          "CAP_SYS_PACCT",
+          "CAP_SYS_PTRACE",
+          "CAP_SYS_RAWIO",
+          "CAP_SYS_RESOURCE",
+          "CAP_SYS_TIME",
+          "CAP_SYS_TTY_CONFIG",
+          "CAP_WAKE_ALARM"
+        ],
+        "effective": [
+          "CAP_AUDIT_CONTROL",
+          "CAP_AUDIT_READ",
+          "CAP_AUDIT_WRITE",
+          "CAP_BLOCK_SUSPEND",
+          "CAP_BPF",
+          "CAP_CHECKPOINT_RESTORE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_DAC_READ_SEARCH",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_IPC_LOCK",
+          "CAP_IPC_OWNER",
+          "CAP_KILL",
+          "CAP_LEASE",
+          "CAP_LINUX_IMMUTABLE",
+          "CAP_MAC_ADMIN",
+          "CAP_MAC_OVERRIDE",
+          "CAP_MKNOD",
+          "CAP_NET_ADMIN",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_BROADCAST",
+          "CAP_NET_RAW",
+          "CAP_PERFMON",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYSLOG",
+          "CAP_SYS_ADMIN",
+          "CAP_SYS_BOOT",
+          "CAP_SYS_CHROOT",
+          "CAP_SYS_MODULE",
+          "CAP_SYS_NICE",
+          "CAP_SYS_PACCT",
+          "CAP_SYS_PTRACE",
+          "CAP_SYS_RAWIO",
+          "CAP_SYS_RESOURCE",
+          "CAP_SYS_TIME",
+          "CAP_SYS_TTY_CONFIG",
+          "CAP_WAKE_ALARM"
+        ],
+        "inheritable": [
+          "CAP_AUDIT_CONTROL",
+          "CAP_AUDIT_READ",
+          "CAP_AUDIT_WRITE",
+          "CAP_BLOCK_SUSPEND",
+          "CAP_BPF",
+          "CAP_CHECKPOINT_RESTORE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_DAC_READ_SEARCH",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_IPC_LOCK",
+          "CAP_IPC_OWNER",
+          "CAP_KILL",
+          "CAP_LEASE",
+          "CAP_LINUX_IMMUTABLE",
+          "CAP_MAC_ADMIN",
+          "CAP_MAC_OVERRIDE",
+          "CAP_MKNOD",
+          "CAP_NET_ADMIN",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_BROADCAST",
+          "CAP_NET_RAW",
+          "CAP_PERFMON",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYSLOG",
+          "CAP_SYS_ADMIN",
+          "CAP_SYS_BOOT",
+          "CAP_SYS_CHROOT",
+          "CAP_SYS_MODULE",
+          "CAP_SYS_NICE",
+          "CAP_SYS_PACCT",
+          "CAP_SYS_PTRACE",
+          "CAP_SYS_RAWIO",
+          "CAP_SYS_RESOURCE",
+          "CAP_SYS_TIME",
+          "CAP_SYS_TTY_CONFIG",
+          "CAP_WAKE_ALARM"
+        ],
+        "permitted": [
+          "CAP_AUDIT_CONTROL",
+          "CAP_AUDIT_READ",
+          "CAP_AUDIT_WRITE",
+          "CAP_BLOCK_SUSPEND",
+          "CAP_BPF",
+          "CAP_CHECKPOINT_RESTORE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_DAC_READ_SEARCH",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_IPC_LOCK",
+          "CAP_IPC_OWNER",
+          "CAP_KILL",
+          "CAP_LEASE",
+          "CAP_LINUX_IMMUTABLE",
+          "CAP_MAC_ADMIN",
+          "CAP_MAC_OVERRIDE",
+          "CAP_MKNOD",
+          "CAP_NET_ADMIN",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_BROADCAST",
+          "CAP_NET_RAW",
+          "CAP_PERFMON",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYSLOG",
+          "CAP_SYS_ADMIN",
+          "CAP_SYS_BOOT",
+          "CAP_SYS_CHROOT",
+          "CAP_SYS_MODULE",
+          "CAP_SYS_NICE",
+          "CAP_SYS_PACCT",
+          "CAP_SYS_PTRACE",
+          "CAP_SYS_RAWIO",
+          "CAP_SYS_RESOURCE",
+          "CAP_SYS_TIME",
+          "CAP_SYS_TTY_CONFIG",
+          "CAP_WAKE_ALARM"
+        ]
+      },
+      "command": [
+        "/encfs.sh"
+      ],
+      "env_rules": [
+        {
+          "pattern": "EncfsSideCarArgs=ewogICAiYXp1cmVfZmlsZXN5c3RlbXMiOiBbCiAgICAgIHsKICAgICAgICAgIm1vdW50X3BvaW50IjogIi9tbnQvcmVtb3RlL3NoYXJlIiwKICAgICAgICAgImF6dXJlX3VybCI6ICJodHRwczovL2Njc2VhLmJsb2IuY29yZS53aW5kb3dzLm5ldC9lbmNmcy9lbmNmc2thdGFjYy5pbWciLAogICAgICAgICAiYXp1cmVfdXJsX3ByaXZhdGUiOiB0cnVlLAogICAgICAgICAicmVhZF93cml0ZSI6IHRydWUsCiAgICAgICAgICJrZXkiOiB7CiAgICAgICAgICAgICJraWQiOiAiZW5jZnMiLAogICAgICAgICAgICAia3R5IjogIlJTQS1IU00iLAogICAgICAgICAgICAiYXV0aG9yaXR5IjogewogICAgICAgICAgICAgICAiZW5kcG9pbnQiOiAiY2NzZWEuc2FzaWEuYXR0ZXN0LmF6dXJlLm5ldCIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgImFrdiI6IHsKICAgICAgICAgICAgICAgImVuZHBvaW50IjogImNja3ZwLnZhdWx0LmF6dXJlLm5ldCIKICAgICAgICAgICAgfQogICAgICAgICB9LAogICAgICAgICAia2V5X2Rlcml2YXRpb24iOiB7CiAgICAgICAgICAgICJzYWx0IjogIjYwNDM4ZGVjMTkzZDE5MGEzOWVkOTMyYTQzNzg3NjQ0IiwKICAgICAgICAgICAgImxhYmVsIjogImVuY2ZzIgogICAgICAgICB9CiAgICAgIH0KICAgXQp9",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "LogFile=/var/log/encfs.log",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "LogLevel=trace",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "TERM=xterm",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "((?i)FABRIC)_.+=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "HOSTNAME=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "T(E)?MP=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "FabricPackageFileName=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "HostedServiceName=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "IDENTITY_API_VERSION=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "IDENTITY_HEADER=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "IDENTITY_SERVER_THUMBPRINT=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "azurecontainerinstance_restarted_by=.+",
+          "required": false,
+          "strategy": "re2"
+        }
+      ],
+      "exec_processes": [],
+      "id": "mcr.microsoft.com/aci/encfs:2.7",
+      "layers": [
+        "c2d669f165d21e3547d7a9452df3f1e602a92f15395be781b8b05e38c0959f49",
+        "5e4aa9d25d0fff25f1a6551e4c14fd89850f0249ae0a0025c3748150f048abee",
+        "34231e3fbae91401a81324b93f60dee923a721b17689ed01acb675d507efcc34",
+        "52d67dfb891494fcd41f884171e1f10f352536a8525b63f6a7cfbb0aef447739",
+        "285f082dce0ce131ace2857bc10f5f4756c23736bbc1f155e644190ec3a09cae"
+      ],
+      "mounts": [
+        {
+          "destination": "/mnt/remote",
+          "options": [
+            "rbind",
+            "rshared",
+            "rw"
+          ],
+          "source": "sandbox:///tmp/atlas/emptydir/.+",
+          "type": "bind"
+        },
+        {
+          "destination": "/etc/resolv.conf",
+          "options": [
+            "rbind",
+            "rshared",
+            "rw"
+          ],
+          "source": "sandbox:///tmp/atlas/resolvconf/.+",
+          "type": "bind"
+        }
+      ],
+      "no_new_privileges": false,
+      "seccomp_profile_sha256": "",
+      "signals": [],
+      "user": {
+        "group_idnames": [
+          {
+            "pattern": "",
+            "strategy": "any"
+          }
+        ],
+        "umask": "0022",
+        "user_idname": {
+          "pattern": "",
+          "strategy": "any"
+        }
+      },
+      "working_dir": "/"
+    },
+    {
+      "allow_elevated": false,
+      "allow_stdio_access": true,
+      "capabilities": {
+        "ambient": [],
+        "bounding": [
+          "CAP_AUDIT_WRITE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_KILL",
+          "CAP_MKNOD",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_RAW",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYS_CHROOT"
+        ],
+        "effective": [
+          "CAP_AUDIT_WRITE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_KILL",
+          "CAP_MKNOD",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_RAW",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYS_CHROOT"
+        ],
+        "inheritable": [],
+        "permitted": [
+          "CAP_AUDIT_WRITE",
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_FOWNER",
+          "CAP_FSETID",
+          "CAP_KILL",
+          "CAP_MKNOD",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_NET_RAW",
+          "CAP_SETFCAP",
+          "CAP_SETGID",
+          "CAP_SETPCAP",
+          "CAP_SETUID",
+          "CAP_SYS_CHROOT"
+        ]
+      },
+      "command": [
+        "/bin/sh",
+        "-c",
+        "while true; do cat /mnt/remote/share/test.txt | /usr/bin/head -n 20; sleep 1; done"
+      ],
+      "env_rules": [
+        {
+          "pattern": "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "TERM=xterm",
+          "required": false,
+          "strategy": "string"
+        },
+        {
+          "pattern": "((?i)FABRIC)_.+=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "HOSTNAME=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "T(E)?MP=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "FabricPackageFileName=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "HostedServiceName=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "IDENTITY_API_VERSION=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "IDENTITY_HEADER=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "IDENTITY_SERVER_THUMBPRINT=.+",
+          "required": false,
+          "strategy": "re2"
+        },
+        {
+          "pattern": "azurecontainerinstance_restarted_by=.+",
+          "required": false,
+          "strategy": "re2"
+        }
+      ],
+      "exec_processes": [],
+      "id": "docker.io/alpine:3.17.1",
+      "layers": [
+        "595bb004f0759861ca5e341ce6e6d34ea205e9f971cf1ab63737105976a1d095"
+      ],
+      "mounts": [
+        {
+          "destination": "/mnt/remote",
+          "options": [
+            "rbind",
+            "rshared",
+            "rw"
+          ],
+          "source": "sandbox:///tmp/atlas/emptydir/.+",
+          "type": "bind"
+        },
+        {
+          "destination": "/etc/resolv.conf",
+          "options": [
+            "rbind",
+            "rshared",
+            "rw"
+          ],
+          "source": "sandbox:///tmp/atlas/resolvconf/.+",
+          "type": "bind"
+        }
+      ],
+      "no_new_privileges": false,
+      "seccomp_profile_sha256": "",
+      "signals": [],
+      "user": {
+        "group_idnames": [
+          {
+            "pattern": "",
+            "strategy": "any"
+          }
+        ],
+        "umask": "0022",
+        "user_idname": {
+          "pattern": "",
+          "strategy": "any"
+        }
+      },
+      "working_dir": "/"
+    },
+    {
+      "allow_elevated": false,
+      "allow_stdio_access": true,
+      "capabilities": {
+        "ambient": [],
+        "bounding": [
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_FSETID",
+          "CAP_FOWNER",
+          "CAP_MKNOD",
+          "CAP_NET_RAW",
+          "CAP_SETGID",
+          "CAP_SETUID",
+          "CAP_SETFCAP",
+          "CAP_SETPCAP",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_SYS_CHROOT",
+          "CAP_KILL",
+          "CAP_AUDIT_WRITE"
+        ],
+        "effective": [
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_FSETID",
+          "CAP_FOWNER",
+          "CAP_MKNOD",
+          "CAP_NET_RAW",
+          "CAP_SETGID",
+          "CAP_SETUID",
+          "CAP_SETFCAP",
+          "CAP_SETPCAP",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_SYS_CHROOT",
+          "CAP_KILL",
+          "CAP_AUDIT_WRITE"
+        ],
+        "inheritable": [],
+        "permitted": [
+          "CAP_CHOWN",
+          "CAP_DAC_OVERRIDE",
+          "CAP_FSETID",
+          "CAP_FOWNER",
+          "CAP_MKNOD",
+          "CAP_NET_RAW",
+          "CAP_SETGID",
+          "CAP_SETUID",
+          "CAP_SETFCAP",
+          "CAP_SETPCAP",
+          "CAP_NET_BIND_SERVICE",
+          "CAP_SYS_CHROOT",
+          "CAP_KILL",
+          "CAP_AUDIT_WRITE"
+        ]
+      },
+      "command": [
+        "/pause"
+      ],
+      "env_rules": [
+        {
+          "pattern": "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "required": true,
+          "strategy": "string"
+        },
+        {
+          "pattern": "TERM=xterm",
+          "required": false,
+          "strategy": "string"
+        }
+      ],
+      "exec_processes": [],
+      "layers": [
+        "16b514057a06ad665f92c02863aca074fd5976c755d26bff16365299169e8415"
+      ],
+      "mounts": [],
+      "no_new_privileges": false,
+      "seccomp_profile_sha256": "",
+      "signals": [],
+      "user": {
+        "group_idnames": [
+          {
+            "pattern": "",
+            "strategy": "any"
+          }
+        ],
+        "umask": "0022",
+        "user_idname": {
+          "pattern": "",
+          "strategy": "any"
+        }
+      },
+      "working_dir": "/"
+    }
+  ]
