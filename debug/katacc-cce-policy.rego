@@ -22,7 +22,7 @@ default SignalProcessRequest := true
 default StartContainerRequest := true
 default StatsContainerRequest := true
 default TtyWinResizeRequest := true
-default UpdateEphemeralMountsRequest := true
+default UpdateEphemeralMountsRequest := false
 default UpdateInterfaceRequest := true
 default UpdateRoutesRequest := true
 default WaitProcessRequest := true
@@ -1115,6 +1115,10 @@ ReadStreamRequest {
     policy_data.request_defaults.ReadStreamRequest == true
 }
 
+UpdateEphemeralMountsRequest {
+    policy_data.request_defaults.UpdateEphemeralMountsRequest == true
+}
+
 WriteStreamRequest {
     policy_data.request_defaults.WriteStreamRequest == true
 }
@@ -1500,7 +1504,7 @@ policy_data := {
             "type_": "local",
             "options": [
               "rbind",
-              "rprivate",
+              "rshared",
               "rw"
             ]
           }
@@ -1595,8 +1599,8 @@ policy_data := {
           "source": "",
           "fstype": "fuse3.kata-overlay",
           "options": [
-            "f475cd6e8ee34d629817a4f17ae85bd106c267d1197e3b3cf8bd7fefaaa80cd5:68b25f1a5a516d0c5be6417754a10c6f8f914026f87dc6747fd61a5f7505ea93:cd4b8e31d56e87930ff0554b9ce29eb633a4c6660b2a40c841368e13905e4fd3:e35bc70643893d907c86a9e09c3511b26084d9a4f26bae08843251786c311fc4:d5567d3931056de85269d2ef44fe46bf168feb53c523a57180956b1af01c69cb",
-            "d28be6ab1333097fcc9ec88f23e56fa43d921b4b971d253fb102ed935cf6ca3f:8ec23600acab96c5dadb83e9beea7e458afa6b72131613c3a7fa7c39622cceba:ca886185d83a748aef8eaac5cb7d74004aa6fa2e439b6e30c0be77fef5d92b56:61cda1a6245c02c3fafcf8d23262aee5c2ede7fcc67b60620bb1993150f91838:ad8468ff2a4197e09f0177d9b0852fa31a8164920dada2da7e1fab449dcfd9f1"
+            "0a343128adfbe0198d36b43f0ad45a0b6355b6fc34587801832f3f0609f70bf3:df087d03730512d3fc186453b645b226cd77417df770bf36c101354593cb6ca0:3268ee1321111714a5fc8b5885084fc873b563ca39e3cc9aa3e4c9faa46f2cdf:e84b431603d7a737b0555fd88ae946a060bc0257741d64126ae69f06a2028e77:d5567d3931056de85269d2ef44fe46bf168feb53c523a57180956b1af01c69cb",
+            "d3faea80217b9775425061c3f99dfd53571aa9cdb058e3edcf09285000f28270:e2b19b229321105d6055e82e424746a0201c6d93b394dd7b0e722e5341c3499b:1c5383880a2fca06da8696c9abb5b0eefc189289c061467f38e5bf42f8a8ab1f:757d717aa4e013b05b4eb6b021653231aeadc8798e3611970926a0affb522bf3:ad8468ff2a4197e09f0177d9b0852fa31a8164920dada2da7e1fab449dcfd9f1"
           ],
           "mount_point": "$(cpath)/$(bundle-id)",
           "fs_group": null
@@ -1810,7 +1814,7 @@ policy_data := {
             "type_": "local",
             "options": [
               "rbind",
-              "rprivate",
+              "rslave",
               "rw"
             ]
           }
@@ -1896,7 +1900,7 @@ policy_data := {
           "fs_group": null
         }
       ],
-      "exec_commands": []
+      "exec_commands": ["/bin/ash"]
     }
   ],
   "common": {
@@ -1978,8 +1982,8 @@ policy_data := {
         "^$(svc_name)_SERVICE_PORT=$(ip_p)$",
         "^$(svc_name)_SERVICE_PORT_$(dns_label)=$(ip_p)$",
         "^$(svc_name)_PORT=tcp://$(ipv4_a):$(ip_p)$",
-        "^AZURE_CLIENT_ID=[A-Fa-f0-9-]+$",
-        "^AZURE_TENANT_ID=[A-Fa-f0-9-]+$",
+        "^AZURE_CLIENT_ID=[A-Fa-f0-9-]*$",
+        "^AZURE_TENANT_ID=[A-Fa-f0-9-]*$",
         "^AZURE_FEDERATED_TOKEN_FILE=/var/run/secrets/azure/tokens/azure-identity-token$",
         "^AZURE_AUTHORITY_HOST=https://login\\.microsoftonline\\.com/$"
       ]
@@ -1992,6 +1996,7 @@ policy_data := {
       "regex": []
     },
     "ReadStreamRequest": true,
-    "WriteStreamRequest": false
+    "UpdateEphemeralMountsRequest": false,
+    "WriteStreamRequest": true
   }
 }
