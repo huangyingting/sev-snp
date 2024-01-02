@@ -719,3 +719,35 @@ For more details, see [Security policy for Confidential Containers on Azure Kube
 sha256sum ./debug/katacc-cce-policy-debug.rego 
 59f6818ede2b7124ea2c912a88fa99d9a052e472bcfd3bcc4be69d3866e9d3c3  ./debug/katacc-cce-policy-debug.rego
 ```
+
+**NOTE**: `az confcom katapolicygen` internally uses `genpolicy` from [kata-containers](https://github.com/microsoft/kata-containers/) to generate the policy, the `genpolicy` has the problem to correctly handle `mountPropagation: Bidirectional` or `mountPropagation: HostToContainer` on `emptyDir` volume, as a consequence, the container won't be created with error `Error: failed to create containerd task: failed to create shim task: "CreateContainerRequest is blocked by policy": unknown`
+
+To work around the issue, for `HostToContainer`, we need to replace `rprivate` to `rslave` in the generated policy.
+
+```json
+          {
+            "destination": "/mnt/remote",
+            "source": "^$(cpath)/$(sandbox-id)/local/remotemounts$",
+            "type_": "local",
+            "options": [
+              "rbind",
+              "rslave",
+              "rw"
+            ]
+          }
+```
+
+For `Bidirectional`, we need to replace `rprivate` to `rshared` in the generated policy.
+
+```json
+          {
+            "destination": "/mnt/remote",
+            "source": "^$(cpath)/$(sandbox-id)/local/remotemounts$",
+            "type_": "local",
+            "options": [
+              "rbind",
+              "rshared",
+              "rw"
+            ]
+          }
+```
