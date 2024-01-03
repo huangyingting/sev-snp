@@ -28,8 +28,6 @@ spec:
         - name: id-rsa
           readOnly: true
           mountPath: "/root/.ssh"
-      imagePullSecrets:
-        - name: ccacrsea
       volumes:
         - name: endorsement-location
           hostPath:

@@ -1,0 +1,4 @@
+# Final image
+FROM alpine:3.18
+RUN apk update && apk upgrade --no-cache && apk add --no-cache jq openssh curl
+CMD [ "/bin/sh", "-c", "sleep infinity" ]

@@ -25,6 +25,8 @@ jobs:
             image:  ${{ github.repository_owner }}/sev-snp
           - dockerfile: docker/Dockerfile.javacc
             image:  ${{ github.repository_owner }}/javacc
+          - dockerfile: docker/Dockerfile.ssh
+            image:  ${{ github.repository_owner }}/ssh
     permissions:
       contents: read
       packages: write

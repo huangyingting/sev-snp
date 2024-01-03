@@ -1,0 +1,30 @@
+# kubectl create secret generic id-rsa --from-file=id_rsa=<private_key.pem>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ssh
+  name: ssh
+spec:
+  selector:
+    matchLabels:
+      app: ssh
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ssh
+    spec:
+      containers:
+      - image: ghcr.io/huangyingting/ssh:latest
+        imagePullPolicy: Always
+        name: ssh
+        volumeMounts:
+        - name: id-rsa
+          readOnly: true
+          mountPath: "/root/.ssh"
+      volumes:
+        - name: id-rsa
+          secret:
+            secretName: id-rsa
+            defaultMode: 0600
